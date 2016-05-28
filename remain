@@ -1,0 +1,8 @@
+
+使用xutils bindimageview时修改CircleImageView代码
+ @Override 
+ public ScaleType getScaleType() { return SCALE_TYPE; }
+ 
+ 
+ @Override
+ public void setScaleType(ScaleType scaleType) { return; } 
