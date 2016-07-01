@@ -1,0 +1,66 @@
+package com.hrandroid.core.utils;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import com.hrandroid.core.log.HrLog;
+
+/**
+ * ListView工具类
+ * Created by MagicMacPa on 16/6/7.
+ *
+ */
+
+public class ListViewUtils {
+    /**
+     * 动态计算listview的高度
+     *
+     * @param lv
+     * @return
+     */
+    public static int getListViewHeight(ListView lv) {
+        ListAdapter adapter = lv.getAdapter();
+        if (adapter == null) {
+            return 0;
+        }
+        int count = adapter.getCount();
+        int countHeight = 0;
+        for (int i = 0; i < count; i++) {
+            View item = adapter.getView(i, null, lv);
+            item.measure(0, 0);
+            HrLog.log("listView高度计算-MeasuredHeight=" + item.getMeasuredHeight());
+            countHeight += item.getMeasuredHeight();
+        }
+//        View listItem = adapter.getView(j, null, lv);
+//        ViewGroup.LayoutParams params = listItem.getLayoutParams();
+//        params.height = countHeight;
+//        listItem.setLayoutParams(params);
+        HrLog.log("listView高度计算结果-countHeight=" + countHeight);
+        return countHeight;
+    }
+
+    /**
+     * 动态设置Listview高度
+     * @param listView
+     */
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+            HrLog.log("listView高度计算-MeasuredHeight=" + listItem.getMeasuredHeight() + ", listItem=" + listItem.getHeight());
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight
+                + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        ((ViewGroup.MarginLayoutParams) params).setMargins(10, 10, 10, 10);
+        listView.setLayoutParams(params);
+    }
+}
