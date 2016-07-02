@@ -42,7 +42,7 @@ public class ListViewUtils {
     }
 
     /**
-     * 动态设置Listview高度
+     * 动态设置Listview高度  在listview高度变化时调用 用于计算listview高度匹配内容
      * @param listView
      */
     public static void setListViewHeightBasedOnChildren(ListView listView) {
