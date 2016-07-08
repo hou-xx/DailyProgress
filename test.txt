@@ -1,1 +1,2 @@
-²âÊÔgitÃüÁî¡£
+ï¿½ï¿½ï¿½ï¿½gitï¿½ï¿½ï¿½î¡£
+ We've detected the file encoding as Shift_JIS. When you commit changes we will transcode it to UTF-8.
