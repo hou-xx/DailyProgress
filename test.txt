@@ -1,2 +1,1 @@
-����git���
- We've detected the file encoding as Shift_JIS. When you commit changes we will transcode it to UTF-8.
+listView动态计算高度时会频繁调用adapter的getView方法，要注意getView中产生的新对象。
