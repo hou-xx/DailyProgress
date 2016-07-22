@@ -11,3 +11,5 @@ background会放大，而src受scrollType影响。
 #4、Android字体
 android默认字体是冬青黑体，与微软雅黑相似。也可以把字体ttf文件打包到asset中使用typeface设置自定义的字体。
 countdowntimer
+#5、倒计时
+JAVA提供CountDownTimer类能非常方便的实现倒计时
