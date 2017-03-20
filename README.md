@@ -28,4 +28,8 @@ now.getMilliseconds(); // 875, 毫秒数
 now.getTime(); // 1435146562875, 以number形式表示的时间戳
 ```    
 - **css计算width、height需要减去margin、padding**     
-如果没有减去（比如同时写了width 100%和padding，在手机上宽度就会超过一屏而错动）
+如果没有减去（比如同时写了width 100%和padding，在手机上宽度就会超过一屏而错动）     
+- **微信小程序**     
+{{}} 会先于页面渲染 执行，image标签 src中链接可以部分是计算出来然后拼接的
+
+
