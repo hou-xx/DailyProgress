@@ -26,4 +26,6 @@ now.getMinutes(); // 49, 分钟
 now.getSeconds(); // 22, 秒
 now.getMilliseconds(); // 875, 毫秒数
 now.getTime(); // 1435146562875, 以number形式表示的时间戳
-```
+```    
+- **css计算width、height需要减去margin、padding**     
+如果没有减去（比如同时写了width 100%和padding，在手机上宽度就会超过一屏而错动）
