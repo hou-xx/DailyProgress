@@ -12,7 +12,8 @@ background会放大，而src受scrollType影响。
 android默认字体是冬青黑体，与微软雅黑相似。也可以把字体ttf文件打包到asset中使用typeface设置自定义的字体。
 - **倒计时 countdowntimer**    
 JAVA提供CountDownTimer类能非常方便的实现倒计时
-- **javascript Date对象**     
+- **javascript**      
+**Date对象**    
 getDay 获取的是星期几， *getDate才是当月日期* ；getMonth 月份从0开始 ^v^
 ```
 var now = new Date();
@@ -27,6 +28,8 @@ now.getSeconds(); // 22, 秒
 now.getMilliseconds(); // 875, 毫秒数
 now.getTime(); // 1435146562875, 以number形式表示的时间戳
 ```    
+**forEach**   
+js数组forEach方法无法使用break/return 跳出循环。
 - **css计算width、height需要减去margin、padding**     
 如果没有减去（比如同时写了width 100%和padding，在手机上宽度就会超过一屏而错动）     
 - **微信小程序**     
