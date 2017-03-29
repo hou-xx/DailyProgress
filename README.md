@@ -31,7 +31,9 @@ now.getTime(); // 1435146562875, 以number形式表示的时间戳
 **forEach**   
 js数组forEach方法无法使用break/return 跳出循环。
 - **css计算width、height需要减去margin、padding**     
-如果没有减去（比如同时写了width 100%和padding，在手机上宽度就会超过一屏而错动）     
+如果没有减去（比如同时写了width 100%和padding，在手机上宽度就会超过一屏而错动）   
+- **ES6 箭头函数**    
+箭头函数 能写出漂亮的匿名函数 ，很适合于微信小程序开发。不过，箭头函数里的 this 句柄 指向调用者，生命周期的函数如果需要使用this 不能使用箭头函数。
 - **微信小程序**     
 {{}} 会先于页面渲染 执行，image标签 src中链接可以部分是计算出来然后拼接的    
 target指代 触发事件的源组件；currentTarget指代 事件绑定的当前组件。 在外层view绑定的事件 想要响应内层view的事件 必须使用currentTarget才能正常得到传递的数据
