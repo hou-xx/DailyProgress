@@ -37,6 +37,7 @@ js数组forEach方法无法使用break/return 跳出循环。
 - **微信小程序**     
 1. {{}} 会先于页面渲染 执行，image标签 src中链接可以部分是计算出来然后拼接的    ;
 2. target指代 触发事件的源组件；currentTarget指代 事件绑定的当前组件。 在外层view绑定的事件 想要响应内层view的事件 必须使用currentTarget才能正常得到传递的数据;
-3. 在App() 的生命周期中使用this，一定不要使用 getApp() 。此时通过getApp()获得的实例 无法访问全局数据（可能是尚未准备好），而this可以。
+3. 在App() 的生命周期中使用this，一定不要使用 getApp() 。此时通过getApp()获得的实例 无法访问全局数据（可能是尚未准备好），而this可以；
+4. 色值使用6位，使用8位色值控制颜色变淡 在android上有效，在IOS上会显示奇怪的颜色。
 
 
