@@ -8,6 +8,13 @@ fragment可以接受onActivityResult 只需要所附着的Activity专递给它�
 setImageResource、setImageBitmap、setImageDrawable；
 代码中设置drawable相当于src；bitmap相当于background 。
 background会放大，而src受scrollType影响。
+- **状态栏**    
+6.0+手机上沉浸式状态栏后若为白色背景 状态栏会出现灰框 可调整状态栏颜色为黑色
+```
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+```
 - **Android字体**    
 android默认字体是冬青黑体，与微软雅黑相似。也可以把字体ttf文件打包到asset中使用typeface设置自定义的字体。
 - **倒计时 countdowntimer**    
