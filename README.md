@@ -35,6 +35,8 @@ now.getSeconds(); // 22, 秒
 now.getMilliseconds(); // 875, 毫秒数
 now.getTime(); // 1435146562875, 以number形式表示的时间戳
 ```    
+new Date(year,month,day) 时, year 是当前年减去 1900 ; month 从 0 计数。
+
 **forEach**   
 js数组forEach方法无法使用break/return 跳出循环。
 - **css计算width、height需要减去margin、padding**     
