@@ -19,6 +19,16 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 ```
 - **Android字体**    
 android默认字体是冬青黑体，与微软雅黑相似。也可以把字体ttf文件打包到asset中使用typeface设置自定义的字体。
+- **xutils 与 CircleImageView 冲突**   
+使用xutils bindimageview时修改CircleImageView代码
+```
+ @Override 
+ public ScaleType getScaleType() { return SCALE_TYPE; }
+ 
+ 
+ @Override
+ public void setScaleType(ScaleType scaleType) { return; } 
+```
 
 ## JAVA
 
