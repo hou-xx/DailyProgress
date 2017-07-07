@@ -29,11 +29,10 @@ android默认字体是冬青黑体，与微软雅黑相似。也可以把字体t
  @Override
  public void setScaleType(ScaleType scaleType) { return; } 
 ```
-
+- **倒计时 countdowntimer**    
+Android 提供 `CountDownTimer` 类能非常方便的实现倒计时
 ## JAVA
 
-- **倒计时 countdowntimer**    
-JAVA提供CountDownTimer类能非常方便的实现倒计时
 - **Date对象**    
 new Date(year,month,day) 时, year 是当前年减去 1900 ; month 从 0 计数。    
 getDay 获取的是星期几， *getDate才是当月日期* ；getMonth 月份从0开始 ^v^
