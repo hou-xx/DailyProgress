@@ -2,6 +2,8 @@
 
 ## Android
 
+### [Gradle篇][2]
+
 -  **Fragment**    
 fragment可以接受onActivityResult 只需要所附着的Activity专递给它即可，比如拍照结果
 - **view**    
@@ -82,3 +84,4 @@ page {
 `
 
 [1]:https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/heart-hollow.png
+[2]: https://github.com/tianqing2117/DailyProgress/blob/master/gradle-guide.md
