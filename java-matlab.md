@@ -1,5 +1,5 @@
-#JAVA调用matlab程序 输入输出数据转换
-1.  JAVA 程序调用 matlab函数（matlab导出jar包里的函数）、JAVA解析matlab返回数据时，机器需要先安装**matlab运行时环境** 并 在java工程中导入运行时环境提供的**javabuilder.jar**用于数据类型的转换。
+# JAVA调用matlab程序 输入输出数据转换
+1. JAVA 程序调用 matlab函数（matlab导出jar包里的函数）、JAVA解析matlab返回数据时，机器需要先安装**matlab运行时环境** 并 在java工程中导入运行时环境提供的**javabuilder.jar**用于数据类型的转换。
 2. java工程中导入从matlab导出的jar文件。
 ## 函数调用
  a. 传入函数的JAVA变量先转换为运行时环境里的对象
@@ -47,6 +47,7 @@ for (int i = 1; i <= rowNum; i++) {
 String.valueOf(((char[][]) cellArray.get(i))[0]);
 ```
 转换为String；
+
  2. 双精度型数据的转换
 确认元胞数组cellArray 的第j 个元素对应双精度型数据（对应SimpleName为double[][]）后,
 通过
@@ -54,6 +55,7 @@ String.valueOf(((char[][]) cellArray.get(i))[0]);
 ((double[][]) cellArray.get(j))[0][0];
 ```
 即可取出该位置的数据；
+
  3. 元胞数组嵌套时的数据转换
 确认元胞数组cellArray 的第k个元素为元胞数组类型（对应SimpleName为MWArray）后,
 通过
@@ -66,6 +68,7 @@ for (int j = 1; j <= array.numberOfElements(); j++) {
        String.valueOf(((char[][]) array.get(j))[0]);
 }
 ```
+
 ## 注意事项：
     1. 运行时环境里的元胞数组 **下标从1开始** 下标为0 报错；
     2. MWCellArray 相当于把表格数据纵向一维展开， 每一列的数据是相连的 而封装java对象要抽出一行的数据；
