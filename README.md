@@ -77,8 +77,6 @@ page {
 }
 ```
 
-## kotlin
-
 签名命令：
 `jarsigner -verbose -keystore demo.jks -signedjar sign.apk unsign.apk alias
 `
