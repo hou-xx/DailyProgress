@@ -2,7 +2,8 @@
 
 ## Android
 
-### [Gradle篇][2]
+### [Gradle 篇][2]
+### [java-matlab 篇][3]
 
 -  **Fragment**    
 fragment可以接受onActivityResult 只需要所附着的Activity专递给它即可，比如拍照结果
@@ -85,3 +86,4 @@ page {
 
 [1]:https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/heart-hollow.png
 [2]: https://github.com/tianqing2117/DailyProgress/blob/master/gradle-guide.md
+[3]: https://github.com/tianqing2117/DailyProgress/blob/master/java-matlab.md
