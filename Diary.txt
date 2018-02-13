@@ -1,1 +1,0 @@
-listView动态计算高度时会频繁调用adapter的getView方法，要注意getView中产生的新对象。
