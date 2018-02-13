@@ -1,5 +1,6 @@
 # productFlavors + buildTypes + signingConfigs 构建差异化 Android 应用
 gradle 脚本作为 AndroidStudio 使用的打包控制语言，有其独特的优势。
+
 ##　常见功能
 和其他脚本语言一样，gradle 脚本也支持实现常见的功能和操作
 - `def` 定义变量和方法
@@ -132,4 +133,4 @@ android {
         }
     }
 ```
-这样就可以完成 gradle 脚本控制不同 flavor 使用不同的签名
+**这样就可以完成 gradle 脚本控制不同 flavor 使用不同的签名**
