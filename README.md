@@ -2,6 +2,7 @@
 
 ## [Gradle 篇][2]
 ## [java-matlab 篇][3]
+## [java 篇][4]
 
 ## Android
 
@@ -35,26 +36,6 @@ android默认字体是冬青黑体，与微软雅黑相似。也可以把字体t
 ```
 - **倒计时 countdowntimer**    
 Android 提供 `CountDownTimer` 类能非常方便的实现倒计时
-## JAVA
-
-- **Date对象**    
-new Date(year,month,day) 时, year 是当前年减去 1900 ; month 从 0 计数。    
-getDay 获取的是星期几， *getDate才是当月日期* ；getMonth 月份从0开始 ^v^
-```
-var now = new Date();
-now; // Wed Jun 24 2015 19:49:22 GMT+0800 (CST)
-now.getFullYear(); // 2015, 年份
-now.getMonth(); // 5, 月份，注意月份范围是0~11，5表示六月
-now.getDate(); // 24, 表示24号
-now.getDay(); // 3, 表示星期三
-now.getHours(); // 19, 24小时制
-now.getMinutes(); // 49, 分钟
-now.getSeconds(); // 22, 秒
-now.getMilliseconds(); // 875, 毫秒数
-now.getTime(); // 1435146562875, 以number形式表示的时间戳
-```
-- **Exception**  
-Exception 的 getMessage 方法得到的有可能是 null ，比如空指针等运行时异常
 
 ## javascript
 
@@ -88,3 +69,4 @@ page {
 [1]:https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/heart-hollow.png
 [2]: https://github.com/tianqing2117/DailyProgress/blob/master/gradle-guide.md
 [3]: https://github.com/tianqing2117/DailyProgress/blob/master/java-matlab.md
+[4]: https://github.com/tianqing2117/DailyProgress/blob/master/java.md
