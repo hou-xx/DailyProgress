@@ -19,6 +19,8 @@ now.getTime(); // 1435146562875, 以number形式表示的时间戳
 Exception 的 getMessage 方法得到的有可能是 null ，比如空指针等运行时异常
 
 - **hibernate**
+
 > 使用 spring-hibernate 时 model 的包名在 AnnotationSessionFactoryBean 的 *packagesToScan* 属性指定，多个包名以 *,* 分割。不包含在内的话，无法操作对应的表。
+
 > 使用 hibernate 的 *Query* 更新表时，datatime 类型的字段应用 **setTimestamp** 赋值，`setData` 会损失时间（只剩下日期）。
 
