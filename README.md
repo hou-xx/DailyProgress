@@ -3,6 +3,7 @@
 ## [Gradle 篇][2]
 ## [java-matlab 篇][3]
 ## [java 篇][4]
+#### [win10 激活][5]
 
 ## Android
 
@@ -70,3 +71,4 @@ page {
 [2]: https://github.com/tianqing2117/DailyProgress/blob/master/gradle-guide.md
 [3]: https://github.com/tianqing2117/DailyProgress/blob/master/java-matlab.md
 [4]: https://github.com/tianqing2117/DailyProgress/blob/master/java.md
+[5]: https://github.com/tianqing2117/DailyProgress/blob/master/active_win10.md
