@@ -9,7 +9,7 @@ mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console
 
 ## 命令行执行 sql 文件
 1. `mysql -h主机地址 –u用户名 –p密码 –D数据库<sql脚本路径全名`
-    指定地址、用户、数据库和sql脚本；
+        指定地址、用户、数据库和sql脚本；
 2. `mysql -h主机地址 –u用户名 –p`
-    登录后，`use 数据库名；`
-    `source sql脚本路径` 制定sql脚本位置。
+        登录后，`use 数据库名；`
+        `source sql脚本路径` 制定sql脚本位置。
