@@ -8,8 +8,8 @@ mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console
 - `--skip-grant-tables` 可指定跳过密码验证，用于忘记root密码时重置密码
 
 ## 命令行执行 sql 文件
-> `mysql -h主机地址 –u用户名 –p密码 –D数据库<sql脚本路径全名`
+1. `mysql -h主机地址 –u用户名 –p密码 –D数据库<sql脚本路径全名`
     指定地址、用户、数据库和sql脚本；
-> `mysql -h主机地址 –u用户名 –p`
+2. `mysql -h主机地址 –u用户名 –p`
     登录后，`use 数据库名；`
     `source sql脚本路径` 制定sql脚本位置。
