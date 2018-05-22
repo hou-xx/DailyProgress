@@ -12,4 +12,13 @@ mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console
     <br>指定地址、用户、数据库和sql脚本；
 2. `mysql -h主机地址 –u用户名 –p`
     <br>登录后，`use 数据库名；`
-    <br>`source sql脚本路径` 制定sql脚本位置。
+    <br>`source sql脚本路径` 指定sql脚本位置。
+
+## 创建数据库、用户及分配权限
+
+```
+CREATE DATABASE IF NOT EXISTS `demodb` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;
+grant usage,select on `demodb`.* to 'demodbcxwh'@'%' identified by 'demodbcxwh';
+GRANT ALL PRIVILEGES on `demodb`.* to 'demodbadmin'@'%' identified by 'demodbadmin';
+grant usage,select,insert,update,delete on `demodb`.* to 'demodbuser'@'%' identified by 'demodbadmin';
+```
