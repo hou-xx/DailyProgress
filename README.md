@@ -3,6 +3,7 @@
 ## [Gradle 篇][2]
 ## [java-matlab 篇][3]
 ## [java 篇][4]
+## [mysql 篇][6]
 #### [win10 激活][5]
 
 ## Android
@@ -72,3 +73,4 @@ page {
 [3]: https://github.com/tianqing2117/DailyProgress/blob/master/java-matlab.md
 [4]: https://github.com/tianqing2117/DailyProgress/blob/master/java.md
 [5]: https://github.com/tianqing2117/DailyProgress/blob/master/active_win10.md
+[6]: https://github.com/tianqing2117/DailyProgress/blob/master/mysql/mysql.md

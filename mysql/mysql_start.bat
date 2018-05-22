@@ -1,0 +1,1 @@
+mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console 
