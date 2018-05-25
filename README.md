@@ -1,7 +1,7 @@
 # Tips ![like][1]
 
-## [Gradle 篇][2]
-## [java-matlab 篇][3]
+## [Gradle:productFlavors + buildTypes + signingConfigs 构建差异化 Android 应用][2]
+## [JAVA 调用 matlab 程序 & 输入输出数据转换][3]
 ## [java 篇][4]
 ## [mysql 篇][6]
 ## [windows 版 charles 使用指南][7]
