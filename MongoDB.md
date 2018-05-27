@@ -33,18 +33,18 @@ mkdir db
 ### Linux 版安装
 
 ## 创建数据库
-> `show dbs;` 查看所有数据库；
-> `db` 查看当前数据库；
-> `use` 指定要使用的数据库，数据库不存在则创建，并且插入数据后才会显示；
-> `db.dropDatabase` 删除数据库；
-> `db.createCollection` 创建集合，集合不需要手动创建，插入数据时会自动创建；
-> `show collections` 显示集合列表； 
-> `db.COLLECTION_NAME.drop()` 删除集合；
-> `db.COLLECTION_NAME.insert(document)` 插入数据
-> `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；
+> `show dbs;` 查看所有数据库；      
+> `db` 查看当前数据库；     
+> `use` 指定要使用的数据库，数据库不存在则创建，并且插入数据后才会显示；        
+> `db.dropDatabase` 删除数据库；      
+> `db.createCollection` 创建集合，集合不需要手动创建，插入数据时会自动创建；      
+> `show collections` 显示集合列表；        
+> `db.COLLECTION_NAME.drop()` 删除集合；     
+> `db.COLLECTION_NAME.insert(document)` 插入数据        
+> `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；      
 
-ps： 
-1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；
+ps：     
+1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
 2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
 
 
