@@ -1,3 +1,4 @@
+![charles-logo][8]
 # 为什么使用 charles-windows
 在实际开发、测试中需要通过代理截取 app 的网络请求报文来快速定位问题。https 双向认证的 app 越来越多，fiddler在这方面并不好用。由于开发、测试的同学使用 windows 系统较多，所以编写此文档作为 Windows 版 charles 使用指南。
 
@@ -82,3 +83,4 @@ ps:
 [charles5]:https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/charles/use-in-phone.png
 [charles6]:https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/charles/start-use.png
 [7]:https://github.com/8enet/Charles-Crack
+[8]:https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/charles/charles-logo.png
