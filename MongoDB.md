@@ -12,10 +12,10 @@ https://www.mongodb.com/download-center#community
 
 1. 选择对应的版本下载预编译二进制包即可
 
-> 在 MongoDB 2.2 版本后已经不再支持 Windows XP 系统。最新版本也已经没有了 32 位系统的安装文件。           
-> 在 `Choose Setup Type` 时选择 `Custom` 可指定安装目录            
-> `MongoDB Compass` 是 MongoDB 可视化管理工具，可选择是否安装         
-> 安装后在系统环境变量中添加 MongDB 安装目录下的 `bin` 目录         
+> Ⅰ. 在 MongoDB 2.2 版本后已经不再支持 Windows XP 系统。最新版本也已经没有了 32 位系统的安装文件。           
+> Ⅱ. 在 `Choose Setup Type` 时选择 `Custom` 可指定安装目录            
+> Ⅲ. `MongoDB Compass` 是 MongoDB 可视化管理工具，可选择是否安装         
+> Ⅳ. 安装后在系统环境变量中添加 MongDB 安装目录下的 `bin` 目录         
 
 2. 创建数据目录
 MongoDB 将数据目录存储在 `db` 目录下，但`db` 目录不会自动创建需要手动创建
