@@ -24,3 +24,6 @@ Exception 的 getMessage 方法得到的有可能是 null ，比如空指针等�
 
 > 使用 hibernate 的 *Query* 更新表时，datatime 类型的字段应用 **setTimestamp** 赋值，`setData` 会损失时间（只剩下日期）。
 
+- spring AOP
+1. 使用 XML 配制的 AOP advice 的 pointcut expression 用 `and`,`or`,`not` 取代`&&`,`||`,`not`；     
+2. expression 的 this(interface_name) 和 `or` 连接时，被排除类的自有方法和继承且实现（可以是直接调用父类的空实现）的方法有效，父类方法无效。     
