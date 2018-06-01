@@ -28,7 +28,7 @@ mkdir db
 
 3. 命令行启动 MongoDB 服务
 命令行执行 `mongod --dbpath e:/MongoDB/db` 启动服务；
-另一命令行执行 `mongo` 即可连接该服务。
+另一命令行执行 `mongo` 即可连接该服务，不指定地址和端口默认尝试连接`localhost` 的 27017 端口。
 
 ### Linux 版安装
 1. 根据系统版本下载对应版本的压缩包，解压即可
@@ -39,6 +39,7 @@ export PATH=MongoDB 安装目录/bin:$PATH
 
 ## 创建数据库
 > `show dbs;` 查看所有数据库；      
+> `show users;` 查看用户；
 > `db` 查看当前数据库；     
 > `use` 指定要使用的数据库，数据库不存在则创建，并且插入数据后才会显示；        
 > `db.dropDatabase` 删除数据库；      
@@ -46,7 +47,10 @@ export PATH=MongoDB 安装目录/bin:$PATH
 > `show collections` 显示集合列表；        
 > `db.COLLECTION_NAME.drop()` 删除集合；     
 > `db.COLLECTION_NAME.insert(document)` 插入数据        
-> `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；      
+> `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；     
+> `db.version()` 查看数据库版本；
+
+## 用户管理 
 
 ps：     
 1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
