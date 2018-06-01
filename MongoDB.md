@@ -37,22 +37,20 @@ mkdir db
 export PATH=MongoDB 安装目录/bin:$PATH
 ```
 
-## 创建数据库
+## 常用命令
 > `show dbs;` 查看所有数据库；      
 > `show users;` 查看用户；
 > `db` 查看当前数据库；     
 > `use` 指定要使用的数据库，数据库不存在则创建，并且插入数据后才会显示；        
 > `db.dropDatabase` 删除数据库；      
 > `db.createCollection` 创建集合，集合不需要手动创建，插入数据时会自动创建；      
-> `show collections` 显示集合列表；        
+> `show collections` 显示集合列表；   
 > `db.COLLECTION_NAME.drop()` 删除集合；     
 > `db.COLLECTION_NAME.insert(document)` 插入数据        
 > `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；     
 > `db.version()` 查看数据库版本；
-
-ps：     
-1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
-2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
+> `db.cloneDatabase("127.0.0.1")`   将指定机器上的数据库的数据克隆到当前数据库
+> `db.copyDatabase("mydb", "temp", "127.0.0.1")`  将本机的mydb的数据复制到temp数据库中
 
 ## 用户管理 
 - MongoDB 没有默认管理员用户，所以要先添加管理员用户，再开启权限认证;
@@ -110,7 +108,11 @@ Successfully added user: {
 ```
 
 
-
+## 创建数据库
+MongoDB 没有创建数据库的命令，`use 数据库名` 后创建集合 `db.createCollection('集合名')` 或插入数据 `db.COLLECTION_NAME.insert('文档')` 即可新建数据库（集合本身不需要创建，插入数据会自动创建）。
+ps：     
+1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
+2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
 
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongoDB.png
