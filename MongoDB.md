@@ -50,6 +50,10 @@ export PATH=MongoDB 安装目录/bin:$PATH
 > `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；     
 > `db.version()` 查看数据库版本；
 
+ps：     
+1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
+2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
+
 ## 用户管理 
 - MongoDB 没有默认管理员用户，所以要先添加管理员用户，再开启权限认证;
 - 切换到 admin 数据库，添加的账号才是管理员用户;
@@ -69,10 +73,42 @@ db.createUser(
    }
 )
 ```
+输入输出示例：
+```
+C:\Users\tal>mongo
+MongoDB shell version v3.6.5
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.6.5
+//省略 warning 日志
+> use admin;
+switched to db admin
+> show collections;
+system.version
+> db.createUser({"user":"admin","pwd":"admin","roles":[{"role":"userAdminAnyDatabase","db":"admin"}]})
+Successfully added user: {
+        "user" : "admin",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                }
+        ]
+}
+> show users;
+{
+        "_id" : "admin.admin",
+        "user" : "admin",
+        "db" : "admin",
+        "roles" : [
+                {
+                        "role" : "userAdminAnyDatabase",
+                        "db" : "admin"
+                }
+        ]
+}
 
-ps：     
-1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
-2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
+```
+
 
 
 
