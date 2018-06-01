@@ -51,6 +51,24 @@ export PATH=MongoDB 安装目录/bin:$PATH
 > `db.version()` 查看数据库版本；
 
 ## 用户管理 
+- MongoDB 没有默认管理员用户，所以要先添加管理员用户，再开启权限认证;
+- 切换到 admin 数据库，添加的账号才是管理员用户;
+- 用户只能在用户所在数据库登录，包括管理员用户;
+- 管理员可以管理所有数据库，但是不能直接管理其他数据库，要先在 admin 数据库认证后才可以。
+
+### 添加管理员用户
+1. 连接数据库 --> `mongo` 或 `mongo --host=127.0.0.1 --port=27017` ;
+2. 切换到 admin 库 --> `use admin;`
+3. 插入 admin 用户
+```
+db.createUser(
+   {
+     user: "admin",//用户名
+     pwd: "admin",//密码
+     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+   }
+)
+```
 
 ps：     
 1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
