@@ -48,7 +48,7 @@ export PATH=MongoDB 安装目录/bin:$PATH
 > `db.COLLECTION_NAME.drop()` 删除集合；     
 > `db.COLLECTION_NAME.insert(document)` 插入数据        
 > `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；     
-> `db.version()` 查看数据库版本；
+> `db.version()` 查看数据库版本；       
 > `db.cloneDatabase("127.0.0.1")`   将指定机器上的数据库的数据克隆到当前数据；     
 > `db.copyDatabase("mydb", "temp", "127.0.0.1")`  将本机的mydb的数据复制到temp数据库中；
 
