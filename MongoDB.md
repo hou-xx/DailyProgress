@@ -49,8 +49,8 @@ export PATH=MongoDB 安装目录/bin:$PATH
 > `db.COLLECTION_NAME.insert(document)` 插入数据        
 > `db.COLLECTION_NAME.save(document)` 不指定`_id` 时插入数据同 insert ，指定时更新数据；     
 > `db.version()` 查看数据库版本；
-> `db.cloneDatabase("127.0.0.1")`   将指定机器上的数据库的数据克隆到当前数据库
-> `db.copyDatabase("mydb", "temp", "127.0.0.1")`  将本机的mydb的数据复制到temp数据库中
+> `db.cloneDatabase("127.0.0.1")`   将指定机器上的数据库的数据克隆到当前数据；     
+> `db.copyDatabase("mydb", "temp", "127.0.0.1")`  将本机的mydb的数据复制到temp数据库中；
 
 ## 用户管理 
 - MongoDB 没有默认管理员用户，所以要先添加管理员用户，再开启权限认证;
@@ -109,7 +109,8 @@ Successfully added user: {
 
 
 ## 创建数据库
-MongoDB 没有创建数据库的命令，`use 数据库名` 后创建集合 `db.createCollection('集合名')` 或插入数据 `db.COLLECTION_NAME.insert('文档')` 即可新建数据库（集合本身不需要创建，插入数据会自动创建）。
+MongoDB 没有创建数据库的命令，`use 数据库名` 后创建集合 `db.createCollection('集合名')` 或插入数据 `db.COLLECTION_NAME.insert('文档')` 即可新建数据库（集合本身不需要创建，插入数据会自动创建）。  
+
 ps：     
 1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
 2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
