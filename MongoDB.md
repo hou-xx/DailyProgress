@@ -31,6 +31,11 @@ mkdir db
 另一命令行执行 `mongo` 即可连接该服务。
 
 ### Linux 版安装
+1. 根据系统版本下载对应版本的压缩包，解压即可
+2. MongoDB 的可执行文件位于 bin 目录下，所以可以将其添加到 PATH 路径中（类似 windows 系统添加到环境变量）    
+```
+export PATH=MongoDB 安装目录/bin:$PATH
+```
 
 ## 创建数据库
 > `show dbs;` 查看所有数据库；      
