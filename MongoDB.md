@@ -123,10 +123,23 @@ auth = true # 指定开启权限认证
 
 - 使用配置文件启动方式启动服务 `mongod -f e:/MongoDB/MongoDB.conf`
    
-b.  测试权限认证  
+b.  用户验证  
 - `mongo` 连接数据库；
 - `show dbs;` 会有 `"Unauthorized"` 错误，说明权限认证已开启；
 - `use admin` 切换到 admin 库，`db.auth('admin','mongodb:passok')` 用户授权，授权成功 显示 1 ，失败显示 0 和错误信息；
+
+### 添加普通数据库用户
+1. admin 库管理登陆；
+2. 切换到业务数据库 `use demo;` , demo是数据库名；
+3. 创建用户
+```
+db.createUser({"user":"demoUser","pwd":"demoUser","roles":[{"role":"readWrite","db":"demo"}]});
+```
+4. 使用新建的用户登陆对应的数据库即可。
+
+### 数据库角色
+
+
 
 ## 创建数据库
 MongoDB 没有创建数据库的命令，`use 数据库名` 后创建集合 `db.createCollection('集合名')` 或插入数据 `db.COLLECTION_NAME.insert('文档')` 即可新建数据库（集合本身不需要创建，插入数据会自动创建）。  
