@@ -8,7 +8,7 @@
 ```
 https://www.mongodb.com/download-center#community
 ```
-### windows 版安装
+#### windows 版安装
 
 1. 选择对应的版本下载预编译二进制包即可
 
@@ -30,7 +30,7 @@ mkdir db
 命令行执行 `mongod --dbpath e:/MongoDB/db` 启动服务；
 另一命令行执行 `mongo` 即可连接该服务，不指定地址和端口默认尝试连接`localhost` 的 27017 端口。
 
-### Linux 版安装
+#### Linux 版安装
 1. 根据系统版本下载对应版本的压缩包，解压即可
 2. MongoDB 的可执行文件位于 bin 目录下，所以可以将其添加到 PATH 路径中（类似 windows 系统添加到环境变量）    
 ```
@@ -58,7 +58,7 @@ export PATH=MongoDB 安装目录/bin:$PATH
 - 用户只能在用户所在数据库登录，包括管理员用户;
 - 管理员可以管理所有数据库，但是不能直接管理其他数据库，要先在 admin 数据库认证后才可以。
 
-### 添加管理员用户
+#### 添加管理员用户
 1. 连接数据库 --> `mongo` 或 `mongo --host=127.0.0.1 --port=27017` ;
 2. 切换到 admin 库 --> `use admin;`
 3. 插入 admin 用户
@@ -107,7 +107,7 @@ Successfully added user: {
 
 ```
 
-### 开启权限认证
+#### 开启权限认证
 a. 权限认证方式启动服务  
 
 - 新建 MongoDB 配置文件 `e:/MongoDB/MongoDB.conf`     
@@ -128,13 +128,13 @@ b.  用户验证
 - `show dbs;` 会有 `"Unauthorized"` 错误，说明权限认证已开启；
 - `use admin` 切换到 admin 库，`db.auth('admin','admin')` 用户授权，授权成功 显示 1 ，失败显示 0 和错误信息；
 
-### 添加普通数据库用户
+#### 添加普通数据库用户
 1. admin 库管理登陆；
 2. 切换到业务数据库 `use demo;` , demo是数据库名；
 3. 创建用户 `db.createUser({"user":"demoUser","pwd":"demoUser","roles":[{"role":"readWrite","db":"demo"}]});`
 4. 使用新建的用户登陆对应的数据库即可。
 
-### 数据库角色
+#### 数据库角色
 角色类型|角色名称
 :---:|:---:
 数据库用户角色|read、readWrite;
