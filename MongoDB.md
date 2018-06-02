@@ -107,6 +107,19 @@ Successfully added user: {
 
 ```
 
+### 开启权限认证
+
+a. 新建 MongoDB 配置文件 `e:/MongoDB/MongoDB.conf`     
+b. 向配置文件添加配置        
+    ```
+    dbpath = e:/MongoDB/db  # 指定dbpath ，需要手动创建文件夹
+    logpath = e:/MongoDB/logs/MongoDB.log  # 指定日志输出路径，需手动创建文件
+    logappend =  # 制定日志是追加
+    journal = # 表示启动日志
+    auth = true # 指定开启权限认证
+    ```     
+ c. 使用配置文件启动方式启动服务 `mongod -f e:/MongoDB/MongoDB.conf`      
+
 
 ## 创建数据库
 MongoDB 没有创建数据库的命令，`use 数据库名` 后创建集合 `db.createCollection('集合名')` 或插入数据 `db.COLLECTION_NAME.insert('文档')` 即可新建数据库（集合本身不需要创建，插入数据会自动创建）。  
