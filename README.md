@@ -77,5 +77,5 @@ page {
 [5]: https://github.com/tianqing2117/DailyProgress/blob/master/win10/active_win10.md
 [6]: https://github.com/tianqing2117/DailyProgress/blob/master/mysql/mysql.md
 [7]: https://github.com/tianqing2117/DailyProgress/blob/master/windows-charles.md
-[8]: https://github.com/tianqing2117/DailyProgress/blob/master/MongoDB.md
+[8]: https://github.com/tianqing2117/DailyProgress/blob/master/mongodb/MongoDB.md
 [9]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongo-db.png

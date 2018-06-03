@@ -1,0 +1,1 @@
+mongod -f e:/MongoDB/MongoDB.conf
