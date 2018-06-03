@@ -172,7 +172,7 @@ ps：
 MongoDB 一般不需要显式创建集合，插入文档时会自动创建。需要创建特殊属性的集合时需要手动创建。      
 集合创建命令：`db.createCollection(name, options)` name --> 数据库名；options --> 数据库属性。
 
-options可选属性：   
+options 可选属性：   
 
 字段|类型|说明
 :---:|:---:|:---:
