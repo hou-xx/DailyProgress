@@ -200,6 +200,61 @@ db.collectionName.insertOne(document)  # 向指定集合中插入一条文档数
 db.collectionName.insertMany([document,...])  # 向指定集合中插入多条文档数据
 ```
 
+#### 更新文档
+- `update()`方法更新文档，语法格式：
+```
+db.collectionName.update(
+   <query>,
+   <update>,
+   {
+     upsert: <boolean>,
+     multi: <boolean>,
+     writeConcern: <document>
+   }
+)
+```
+
+参数|解释
+:--:|:--:
+query | 查询条件，类似 sql 的 where 语句
+update | 更新对象和一些操作符（如$,$inc...），类似 sql 的 set 语句
+upsert | 可选，不存在记录时是否插入，默认 false
+multi | 可选，是否更新所有符合条件的记录，默认 false 只更新第一条
+writeConcern | 可选，抛出异常的级别
+
+- `save()`方法更新文档，语法格式：
+```
+db.collectionName.save(document)
+```
+根据 document 的 `_id` 替换文档
+- 3.2 版本后，新增两种更新方式
+```
+// 更新单个文档，类似 update() multi 参数为 false
+db.collectionName.updateOne() 
+// 更新多个文档，类似 update() multi 参数为 true
+db.collectionName.updateMany() 向指定集合更新多个文档
+```
+
+#### 删除文档
+- `remove()` 删除文档（已废弃），语法
+```
+db.collectionName.remove(
+   <query>,// 删除条件
+   {
+     justOne: <boolean>,// 为 true 或 1 时只删除一个文档
+     writeConcern: <document>
+   }
+)
+```
+- 推荐的删除方法
+```
+// 删除符合条件的第一条文档
+db.collectionName.deleteOne( query )
+// 删除符合条件的所有文档
+db.collectionName.deleteMany( query )
+```
+- 清空集合 `db.collectionName.deleteMany({})`
+
 
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongoDB.png
