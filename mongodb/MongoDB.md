@@ -167,6 +167,22 @@ ps：
 1. Mongdb shell 是 javascripte 环境，语句结束符`;`可省略；   
 2. 数据库名全小写，最多64字节，不能是空字符串（"")，不得含有' '（空格)、.、$、/、\和\0 (空字符)；
 
+## 集合操作
+#### 创建集合
+MongoDB 一般不需要显式创建集合，插入文档时会自动创建。需要创建特殊属性的集合时需要手动创建。      
+集合创建命令：`db.createCollection(name, options)` name --> 数据库名；options --> 数据库属性。
+
+options可选属性：   
+
+字段|类型|说明
+:---:|:---:|:---:
+capped | boolean | （可选）是否为固定集合。固定集合是指有着固定大小的集合，当达到最大值时，它会自动覆盖最早的文档。**默认为false；当该值为 true 时，必须指定 size 参数。**
+autoIndexId | boolean | （可选）是否自动在 _id 字段创建索引。默认为 false。
+size | 数值 | （可选）为固定集合指定一个最大值（字节）。
+max | 数值 | （可选）指定固定集合中包含文档的最大数量。
+
+*插入文档时，MongoDB 先检查固定集合的 size 字段，然后检查 max 字段。*
+
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongoDB.png
 
