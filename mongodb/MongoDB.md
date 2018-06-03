@@ -183,6 +183,14 @@ max | 数值 | （可选）指定固定集合中包含文档的最大数量。
 
 *插入文档时，MongoDB 先检查固定集合的 size 字段，然后检查 max 字段。*
 
+#### 删除集合
+集合删除命令：
+```
+db.collectionName.drop() # collectionName 指集合名称
+```
+成功删除返回 `true` ,删除失败返回 `false` 。
+
+
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongoDB.png
 
