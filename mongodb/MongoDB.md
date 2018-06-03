@@ -190,6 +190,16 @@ db.collectionName.drop() # collectionName 指集合名称
 ```
 成功删除返回 `true` ,删除失败返回 `false` 。
 
+## 文档操作
+#### 插入文档
+- 插入文档：`db.collectionName.insert(document)`;
+- `db.collectionName.save(document)`,若 document 不指定 _id ，则执行插入操作；
+- 3.2 版本后，新增两种插入方式
+```
+db.collectionName.insertOne(document)  # 向指定集合中插入一条文档数据
+db.collectionName.insertMany([document,...])  # 向指定集合中插入多条文档数据
+```
+
 
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongoDB.png
