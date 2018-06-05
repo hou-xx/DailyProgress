@@ -253,7 +253,8 @@ db.collectionName.deleteOne( query )
 // 删除符合条件的所有文档
 db.collectionName.deleteMany( query )
 ```
-- 清空集合 `db.collectionName.deleteMany({})`
+- 清空集合    
+`db.collectionName.deleteMany({})`
 
 
 
