@@ -6,6 +6,7 @@
 ## [mysql 篇][6]
 ## [windows 版 charles 使用指南][7]
 ## ![MongoDB][9] [MongoDB 学习篇][8]
+## [git 篇][10]
 #### [win10 激活][5]
 
 ## Android
@@ -79,3 +80,4 @@ page {
 [7]: https://github.com/tianqing2117/DailyProgress/blob/master/windows-charles.md
 [8]: https://github.com/tianqing2117/DailyProgress/blob/master/mongodb/MongoDB.md
 [9]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongo-db.png
+[10]: https://github.com/tianqing2117/DailyProgress/blob/master/mongodb/git-merge.md
