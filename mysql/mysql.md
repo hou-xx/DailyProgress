@@ -22,3 +22,11 @@ grant usage,select on `demodb`.* to 'demodbcxwh'@'%' identified by 'demodbcxwh';
 GRANT ALL PRIVILEGES on `demodb`.* to 'demodbadmin'@'%' identified by 'demodbadmin';
 grant usage,select,insert,update,delete on `demodb`.* to 'demodbuser'@'%' identified by 'demodbadmin';
 ```
+
+## mysqldump 命令
+语法
+```
+mysqldump [OPTIONS] database [tables]   //到处指定数据库的制定表
+mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...] //导出指定的数据库们
+mysqldump [OPTIONS] --all-databases [OPTIONS]   //导出所有的数据库
+```
