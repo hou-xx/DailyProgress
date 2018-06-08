@@ -26,7 +26,25 @@ grant usage,select,insert,update,delete on `demodb`.* to 'demodbuser'@'%' identi
 ## mysqldump 命令
 语法
 ```
-mysqldump [OPTIONS] database [tables]   //到处指定数据库的制定表
+mysqldump [OPTIONS] database [tables]   //到处指定数据库的指定表
 mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...] //导出指定的数据库们
 mysqldump [OPTIONS] --all-databases [OPTIONS]   //导出所有的数据库
 ```
+示例
+1. 导出所有的数据库到文件
+```
+mysqldump -u用户名 -p密码 --all-databases >/tmp/all.sql
+```
+`/tmp/all.sql` 是指导出到的文件；            
+2. 导出指定数据库的内容到文件
+```
+mysqldump -u用户名 -p密码 --databases db1 db2 >/tmp/db.sql
+```
+`db1`、 `db2` 是指定要导出的数据库名， `/tmp/db.sql` 是导出的文件路径；           
+3. 导出制定数据库的指定表
+```
+mysqldump -u用户名 -p密码 --databases db1 --tables a1 a2  >/tmp/db.sql
+```
+`db1` 是指定要导出的数据库名，`a1` 、 `a2` 是指定要导出的表名， `/tmp/db.sql` 是导出的文件路径；     
+
+> 导出的 sql 文件在导入时，对数据库会判断是否存在，不存在则新建，存在则使用；对表会删除重建再插入数据。
