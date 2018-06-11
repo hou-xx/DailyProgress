@@ -49,3 +49,6 @@ mysqldump -u用户名 -p密码 --databases db1 --tables a1 a2  >/tmp/db.sql
 
 > 导出的 sql 文件在导入时，对数据库会判断是否存在，不存在则新建，存在则使用；对表会删除重建再插入数据。
 > 尽量显式指定字符集 "--default-character-set=utf8" ，避免导出文件无法使用
+
+
+## mysqlbinlog 命令
