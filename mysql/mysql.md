@@ -52,3 +52,4 @@ mysqldump -u用户名 -p密码 --databases db1 --tables a1 a2  >/tmp/db.sql
 
 
 ## mysqlbinlog 命令
+> Mysql的binlog日志作用是用来记录mysql内部增删改查等对mysql数据库有更新的内容的记录（对数据库的改动），对数据库的查询select或show等不会被binlog日志记录;主要用于数据库的主从复制以及增量恢复。
