@@ -256,8 +256,10 @@ db.collectionName.deleteMany( query )
 - 清空集合    
 `db.collectionName.deleteMany({})`
 
+#### 查询文档
+[MongoDb 文档查询][2]
 
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/MongoDB/mongoDB.png
-
+[2]: https://github.com/tianqing2117/DailyProgress/blob/master/mongodb/MongoDB-Query.md
 

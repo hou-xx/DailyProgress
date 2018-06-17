@@ -1,4 +1,4 @@
-## 查询文档
+## 文档查询
 语法：
 ```
 db.collectionName.find(query, projection);
@@ -46,8 +46,8 @@ db.demo.find({$or: [{"CONTENT" : "1"}, {"CONTENT" : "2"}]},{_id:0}).pretty();
 直接把各个条件组合使用即可
 示例：
 ```
-//AUTOR 为 houxx ，且 CONTENT的值等于1或大于2
-db.demo.find({{"AUTOR":"houxx"},{$or: [{"CONTENT":1},{"CONTENT":{$gt:2}}]}},{_id:0}).pretty();
+//AUTOR 为 houxx ，且 money 的值等于1或大于2
+db.demo.find({{"AUTOR":"houxx"},{$or: [{"money":1},{"money":{$gt:2}}]}},{_id:0}).pretty();
 ```
 
 #### projection 条件
