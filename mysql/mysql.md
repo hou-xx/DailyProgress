@@ -20,8 +20,11 @@ mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console
 CREATE DATABASE IF NOT EXISTS `demodb` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;
 grant usage,select on `demodb`.* to 'demodbcxwh'@'%' identified by 'demodbcxwh';
 GRANT ALL PRIVILEGES on `demodb`.* to 'demodbadmin'@'%' identified by 'demodbadmin';
-grant usage,select,insert,update,delete on `demodb`.* to 'demodbuser'@'%' identified by 'demodbadmin';
+grant usage,select,insert,update,delete on `demodb`.* to 'demodbuser'@'%' identified by 'demodbuser';
 ```
+> DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci 是设置数据库字符集和排序方式；
+> grant 是授予权限；
+> identified by 是指定密码。
 
 ## mysqldump 命令
 语法
