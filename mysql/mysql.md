@@ -52,6 +52,9 @@ mysqldump -u用户名 -p密码 --databases db1 --tables a1 a2  >/tmp/db.sql
 
 > 导出的 sql 文件在导入时，对数据库会判断是否存在，不存在则新建，存在则使用；对表会删除重建再插入数据。
 > 尽量显式指定字符集 "--default-character-set=utf8" ，避免导出文件无法使用
+> `-- single-transaction`指定在一个事务中备份数据，保证数据一致性和完整性;`--lock-tables` 指定在备份过程中锁定表，只允许查询不允许修改，但每次只锁定一个数据库的表，需要同时备份多个数据库时，使用`--lock-all-tables`
+> `--no-data`仅仅dump 数据库结构创建脚本;`--no-createinfo`
+去掉 dump 文件中创建表结构的命令
 
 
 ## mysqlbinlog 命令
