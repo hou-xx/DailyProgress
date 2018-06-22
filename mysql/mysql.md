@@ -56,3 +56,18 @@ mysqldump -u用户名 -p密码 --databases db1 --tables a1 a2  >/tmp/db.sql
 
 ## mysqlbinlog 命令
 > Mysql的binlog日志作用是用来记录mysql内部增删改查等对mysql数据库有更新的内容的记录（对数据库的改动），对数据库的查询select或show等不会被binlog日志记录;主要用于数据库的主从复制以及增量恢复。
+
+
+## mysql 权限控制
+MySQL 的相关权限信息主要存储在几个被称为grant tables 的系统表中，即： mysql.User，mysql.db，mysql.Host，mysql.table_priv 和 mysql.column_priv。由于权限信息数据量比较小，而且访问又非常频繁，所以Mysql 在启
+动的时候，就会将所有的权限信息都Load 到内存中保存在几个特定的结构中。我
+们每次手工修改了权限相关的表之后，都需要执行“FLUSH PRIVILEGES”命令重新加载MySQL
+的权限信息。    
+一般情况下尽量使用GRANT，REVOKE，CREATE USER 以及DROP
+USER 命令来进行用户和权限的变更操作（不需要手工执行FLUSH PRIVILEGES 命令），尽量减少直接修改grant tables 来实现用户和权
+限变更的操作。
+
+### 查询用户权限
+```
+SHOW GRANTS FOR 'username'@'hostname'
+```
