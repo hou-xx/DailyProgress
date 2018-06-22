@@ -71,3 +71,14 @@ USER 命令来进行用户和权限的变更操作（不需要手工执行FLUSH 
 ```
 SHOW GRANTS FOR 'username'@'hostname'
 ```
+
+### 授予权限
+```
+GRANT 权限1，权限2… ON 数据库名.表名 TO 'username1'@'hostname1','username2'@'hostname3'
+//例如：
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'def'@'localhost'
+GRANT ALTER ON `test`.* TO 'def'@'localhost'
+//*.* 是指全局;'databaseName'.* 是指指定数据库全库
+//ALL PRIVILEGES 指代全部权限
+//% 作 hostname 代表允许所有，但localhost 不包括在内（指定 -h 127.0.0.1 则支持）
+```
