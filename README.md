@@ -67,6 +67,23 @@ page {
 }
 ```
 
+## Tomcat
+tomcat 默认的 302 重定向是跳转到 80 端口（http），在 https 的请求过程中需要通过 tomcat 重定向时为保持重定向到 443 端口（https），需要修改 tomcat conf 目录下的 `server.xml`，在 对外的 Connector 里 添加
+```
+proxyPort="443"
+scheme="https"
+secure="true"
+```
+例如：
+```
+<Connector  port="8080" protocol="HTTP/1.1"
+            proxyPort="443"
+            scheme="https"
+            secure="true"
+            connectionTimeout="20000"
+            redirectPort="8443" URIEncoding="utf-8" />
+```
+
 签名命令：
 `jarsigner -verbose -keystore demo.jks -signedjar sign.apk unsign.apk alias
 `
