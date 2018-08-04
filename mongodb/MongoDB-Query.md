@@ -61,8 +61,28 @@ db.demo.find({{"AUTOR":"houxx"},{$or: [{"money":1},{"money":{$gt:2}}]}},{_id:0})
 ```
 
 #### $type 类型匹配
-$type 取值
-
+##### $type 取值
+|value|类型|
+|:----:|:----:|
+|1|Double|
+|2|String|
+|3|Object|
+|4|Array|
+|5|Binary data|
+|6|Undefined（已废弃）|
+|7|Object id|
+|8|Boolean|
+|9|Date|
+|10|Null|
+|11|Regular Expression|
+|13|JavaScript|
+|14|Symbol|
+|15|JavaScript (with scope)|
+|16|32-bit integer|
+|17|Timestamp|
+|18|64-bit integer|
+|255|Min key|
+|127|Max key|
 
 示例：
 ```
