@@ -81,7 +81,7 @@ db.demo.find({{"AUTOR":"houxx"},{$or: [{"money":1},{"money":{$gt:2}}]}},{_id:0})
 |16|32-bit integer|
 |17|Timestamp|
 |18|64-bit integer|
-|255|Min key|
+|255|Min key（写作 -1）|
 |127|Max key|
 
 示例：
