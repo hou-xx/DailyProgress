@@ -25,6 +25,7 @@ db.collectionName.find(query, projection).pretty();
 |大于|{key:{$gt:value}}|{"money":{$gt:50}}|where money > 50|
 |大于或等于|{key:{$gte:value}}   |{"money":{$gte:50}}|where money >= 50|
 |不等于|{key:{$ne:value}}|{"money":{$ne:50}}|where money != 50|
+|类型匹配|{key:{$type:value}}|{"money":{$type:1}}|--|
 
 
 ##### AND 条件
@@ -58,6 +59,10 @@ db.demo.find({{"AUTOR":"houxx"},{$or: [{"money":1},{"money":{$gt:2}}]}},{_id:0})
 //_id 键默认返回，需要主动指定 _id:0 才会隐藏
 //两种模式不能混用，全 1 或全 0
 ```
+
+#### $type 类型匹配
+$type 取值
+
 
 示例：
 ```
