@@ -49,7 +49,7 @@ db.COLLECTION_NAME.getIndexes();
 ```
 
 #### totalIndexSize()
-用途：查看索引总大小
+用途：查看索引总大小              
 语法：
 ```
 db.COLLECTION_NAME.totalIndexSize();
@@ -57,7 +57,7 @@ db.COLLECTION_NAME.totalIndexSize();
 
 ### 删除索引
 #### dropIndex()
-用途：删除指定的索引              
+用途：删除指定的索引                  
 语法：
 ```
 db.COLLECTION_NAME.dropIndex(indexName);
@@ -68,7 +68,7 @@ db.product.dropIndex('amount_1');
 ```
 
 #### dropIndexes()
-用途：删除整个文档所有的索引(慎用)              
+用途：删除整个文档所有的索引(慎用)                     
 语法：
 ```
 db.COLLECTION_NAME.dropIndexes();

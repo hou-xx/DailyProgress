@@ -1,7 +1,7 @@
 ## 文档查询 II
 ### 分页查询
 #### Limit() 
-含义：读取指定数量的数据记录。
+含义：读取指定数量的数据记录。                 
 语法：
 ```
 db.collectionName.find(query).limit(NUMBER);
@@ -13,7 +13,7 @@ db.collectionName.find(query).limit(NUMBER);
 db.product.find().limit(2);
 ```
 #### Skip()
-含义：跳过指定数量的数据
+含义：跳过指定数量的数据                    
 语法：
 ```
 db.collectionName.find(query).limit(NUMBER1).skip(NUMBER2);
@@ -29,7 +29,7 @@ db.product.find().limit(2).skip(2);
 ### 排序
 
 #### sort() 
-含义：指定字段进行排序
+含义：指定字段进行排序                     
 语法：
 ```
 db.collectionName.find(query).sort({key:value});
