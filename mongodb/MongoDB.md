@@ -257,7 +257,7 @@ db.collectionName.deleteMany( query )
 `db.collectionName.deleteMany({})`
 
 #### 查询文档
-[MongoDb 文档查询 I ][2]
+[MongoDb 文档查询 I ][2]          
 [MongoDb 文档查询 II ][3]
 
 
