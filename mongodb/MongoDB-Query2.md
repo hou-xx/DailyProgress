@@ -26,6 +26,23 @@ db.collectionName.find(query).limit(NUMBER1).skip(NUMBER2);
 db.product.find().limit(2).skip(2);
 ```
 
+### 排序
+
+#### sort() 
+含义：指定字段进行排序
+语法：
+```
+db.collectionName.find(query).sort({key:value});
+//query ：可选，使用查询操作符指定查询条件
+//key:排序的字段名
+//value：排序方式 （1--> 升序； -1--> 降序）
+```
+示例：
+```
+db.product.find().limit(2).sort({type:1});
+```
+
+
 示例：
 ```
 // 查询所有
@@ -81,5 +98,23 @@ db.product.find().limit(2).skip(2);
         "_id" : ObjectId("5b13eb52e9229a0378cfdec2"),
         "name" : "aaa",
         "type" : "fund"
+}
+
+// 排序（按照 type 降序排列）
+> db.product.find().limit(3).sort({type:-1}).pretty();
+{
+        "_id" : ObjectId("5b13eb28e9229a0378cfdec1"),
+        "name" : "aaa",
+        "type" : "fund"
+}
+{
+        "_id" : ObjectId("5b13eb52e9229a0378cfdec2"),
+        "name" : "aaa",
+        "type" : "fund"
+}
+{
+        "_id" : ObjectId("5b13ebd6e9229a0378cfdec3"),
+        "name" : "bbb",
+        "type" : "deposit"
 }
 ```
