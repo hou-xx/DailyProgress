@@ -3,9 +3,10 @@
 ## [Gradle:productFlavors + buildTypes + signingConfigs 构建差异化 Android 应用][2]
 ## [JAVA 调用 matlab 程序 & 输入输出数据转换][3]
 ## [java 篇][4]
-## ![MongoDB][12][mysql 篇][6]
-## [windows 版 charles 使用指南][7]
+## ![mysql][12][mysql 篇][6]
 ## ![MongoDB][9] [MongoDB 学习篇][8]
+## ![redis][13][redis 学习篇][14]
+## [windows 版 charles 使用指南][7]
 ## [git 篇][10]
 ## [linux 篇][11]
 #### [win10 激活][5]
@@ -101,3 +102,5 @@ secure="true"
 [10]: https://github.com/tianqing2117/DailyProgress/blob/master/git-merge.md
 [11]: https://github.com/tianqing2117/DailyProgress/blob/master/linux.md
 [12]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/mysql/mysql.png
+[13]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/redis/redis.png
+[14]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis-1.md
