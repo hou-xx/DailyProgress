@@ -1,3 +1,4 @@
+# ![mysql][1] Mysql 笔记
 ## 命令行启动本地mysql
 ```
 mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console 
@@ -85,3 +86,6 @@ GRANT ALTER ON `test`.* TO 'def'@'localhost'
 //ALL PRIVILEGES 指代全部权限
 //% 作 hostname 代表允许所有，但localhost 不包括在内（指定 -h 127.0.0.1 则支持）
 ```
+
+
+[1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/mysql/mysql2.png
