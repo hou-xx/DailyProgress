@@ -28,6 +28,20 @@ Exception 的 getMessage 方法得到的有可能是 null ，比如空指针等�
     + 使用 XML 配制的 AOP advice 的 pointcut expression 用 `and`,`or`,`not` 取代`&&`,`||`,`not`；     
     + expression 的 this(interface_name) 和 `or` 连接时，被排除类的自有方法和继承且实现（可以是直接调用父类的空实现）的方法有效，父类方法无效。     
 
+- 数字格式化
+```
+// BigDecimal 指定格式格式化为字符串
+String result = new DecimalFormat(pattern).format(bigDecimal);
+//pattern 为 正则表达式 如 "#.00" 、 "0.00"
+```
+`#` 和 `0` 的区别
+DecimalFormat 类主要靠 # 和 0 两种占位符号来指定数字长度。0 表示如果位数不足则以 0 填充，# 表示只要有可能就把数字拉上这个位置。           
+例如：
+```
+new DecimalFormat("#.00").format(new BigDecimal("0.3456")) --> .35
+new DecimalFormat("0.00").format(new BigDecimal("0.3456")) --> 0.35
+```
+
 - utils       
   
 [数字金额转大写汉字][1]
