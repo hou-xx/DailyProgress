@@ -20,7 +20,22 @@ OK
 ```
 
 ### Linux 版
-下载地址：`http://redis.io/download`
+下载地址：`http://redis.io/download`     
+1. 下载后，解压至安装目录，如`tar -zxvf redis-4.0.11.tar.gz redis-4.0.11/`；
+2. cd 至安装目录，执行 make 命令；   
+```
+cd redis-4.0.11/
+make
+```
+3. make 后在 src 目录下会生成 redis-server（服务端） 和 redis-cli（客户端）程序； 
+4. cd 到 src 目录，`./redis-server` 即可启动服务，若要指定启动配置可 `./redis-server ../redis.conf`
+
+### Mac 版
+下载地址：`http://redis.io/download`  
+1. 下载后解压，进入解压目录；
+2. `sudo make test` 测试编译;
+3. `sudo make install ` 安装。         
+ps: 仅用于测试。
 
 
 
