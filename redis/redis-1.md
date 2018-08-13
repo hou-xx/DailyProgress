@@ -38,7 +38,15 @@ make
 ps: 仅用于测试。
 
 ## Redis 参数配置
-
+conf 文件路径：安装目录下 redis.conf 文件（Linux）；安装目录下 redis.windows.conf 文件（Windows）。      
+### 查看配置
+连接后，`CONFIG GET configName` 可查看配置；      
+`CONFIG GET *` 查看所有配置。  
+```
+10.96.5.4:6379> CONFIG GET dir
+1) "dir"
+2) "/home/redis/redis"
+```
 
 
 
