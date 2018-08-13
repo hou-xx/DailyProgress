@@ -48,6 +48,19 @@ conf 文件路径：安装目录下 redis.conf 文件（Linux）；安装目录�
 2) "/home/redis/redis"
 ```
 
+### 修改配置
+1. 修改配置文件；
+2. 连接后，命令修改配置。
+`CONFIG SET configName value` 修改指定配置。
+```
+10.96.5.4:6379> config set loglevel debug
+OK
+10.96.5.4:6379> config get loglevel
+1) "loglevel"
+2) "debug"
+```
+
+
 
 
 
