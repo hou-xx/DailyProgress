@@ -37,6 +37,7 @@ make
 3. `sudo make install ` 安装。         
 ps: 仅用于测试。
 
+## Redis 参数配置
 
 
 
