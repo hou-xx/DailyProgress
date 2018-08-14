@@ -62,9 +62,23 @@ OK
 
 ### 常见参数
 
-|参数名|说明|可选值|
+|指令|说明|参数解释|
 |:--:|:--:|:--:|
-|daemonize|是否以守护进程的方式运行|yes\no 默认 no|
+|daemonize no|是否以守护进程的方式运行|yes\no 默认 no|
+|pidfile /var/run/redis.pid|守护进程时指定pid写入的文件|默认/var/run/redis.pid|
+|port 6379|指定Redis监听端口|默认 6379|
+|bind 127.0.0.1|绑定的主机地址|默认 127.0.0.1|
+|timeout 300|客户端闲置多长时间后关闭连接|为0表示关闭该功能|
+|loglevel verbose|指定日志记录级别|可选值 debug、verbose、notice、warning，默认为verbose|
+|logfile stdout|日志记录方式|默认为标准输出，守护进程且标准输出则日志将会发送给/dev/null|
+|databases 16|设置数据库的数量|默认数据库为0|
+|save <seconds> <changes>|指定在多长时间内，有多少次更新操作，就将数据同步到数据文件|可以多个条件配合，默认<br/>save 900 1 <br/>save 300 10 <br/>save 60 10000|
+|rdbcompression yes|指定存储至本地数据库时是否压缩数据|默认yes，采用LZF压缩，关闭该选项可节省CPU时间，但数据库文件会变的巨大|
+|dbfilename dump.rdb|指定本地数据库文件名|默认值 dump.rdb|
+|dir ./|指定本地数据库存放目录||
+|slaveof <masterip> <masterport>|本机为slav时，设置master服务的IP地址及端口|Redis启动时会自动从master进行数据同步|
+|masterauth <master-password>|master服务设置了密码保护时，slav服务连接master的密码||
+|requirepass foobared|设置Redis连接密码|默认关闭|
 
 
 
