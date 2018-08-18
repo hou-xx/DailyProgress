@@ -87,7 +87,7 @@ OK
 |maxmemory <bytes\>|指定Redis最大内存限制，Redis在启动时会把数据加载到内存中，达到最大内存后，Redis会先尝试清除已到期或即将到期的Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。Redis新的vm机制，会把Key存放内存，Value会存放在swap区||
 |appendonly no|指定是否在每次更新操作后进行日志记录，Redis在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。|默认 no，按照`save` 的条件写入磁盘|
 |appendfilename appendonly.aof|指定更新日志文件名|默认 appendonly.aof|
-|appendfsync everysec|指定更新日志条件| no 等操作系统进行数据缓存同步到磁盘（快）<br\>always 每次更新操作后手动调用fsync()将数据写到磁盘（慢，安全）<br\>
+|appendfsync everysec|指定更新日志条件| no 等操作系统进行数据缓存同步到磁盘（快）<br>always 每次更新操作后手动调用fsync()将数据写到磁盘（慢，安全）<br>
 everysec 每秒同步一次（折衷，默认值）|
 |vm-enabled no|是否启用虚拟内存机制|默认 no|
 |vm-swap-file /tmp/redis.swap|虚拟内存文件路径，不可多个Redis实例共享|默认 /tmp/redis.swap|
