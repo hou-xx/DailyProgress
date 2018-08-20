@@ -9,4 +9,4 @@
 
 [1]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/redis/redis2.png
 [2]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis-1.md
-[3]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis-3.md
+[3]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis-2.md
