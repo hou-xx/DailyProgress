@@ -5,6 +5,7 @@
 ### String （字符串）
 > String 是 redis 最基本的数据类型；
 > String 类型是二进制安全的，可以包含任何数据，如jpg图片或者序列化的对象，最大存储 **512 MB** 。 
+
 命令格式：
 ```
 set key value
