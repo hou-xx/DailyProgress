@@ -103,4 +103,4 @@ secure="true"
 [11]: https://github.com/tianqing2117/DailyProgress/blob/master/linux.md
 [12]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/mysql/mysql.png
 [13]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/redis/redis.png
-[14]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis-1.md
+[14]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis.md
