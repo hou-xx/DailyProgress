@@ -1,4 +1,4 @@
-# ![icon][5] 安卓手机屏幕投影到电脑
+# ![AirDroid][5] 安卓手机屏幕投影到电脑
 借助 AirDroid 软件将 android 手机屏幕投影到计算机。         
 从连接稳定性、使用便捷度、手机适配度上，AirDroid 远胜 Vysor（chrom浏览器插件）、一键投影、BBQScreen、安卓录屏王 等应用。
 
