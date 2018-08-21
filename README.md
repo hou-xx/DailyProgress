@@ -9,6 +9,7 @@
 ## [windows 版 charles 使用指南][7]
 ## [git 篇][10]
 ## [linux 篇][11]
+## ![AirDroid ICON][16][安卓手机投影][15]
 #### [win10 激活][5]
 
 ## Android
@@ -104,3 +105,5 @@ secure="true"
 [12]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/mysql/mysql.png
 [13]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/redis/redis.png
 [14]: https://github.com/tianqing2117/DailyProgress/blob/master/redis/redis.md
+[15]: https://github.com/tianqing2117/DailyProgress/blob/master/AirDroid.md
+[16]: https://raw.githubusercontent.com/tianqing2117/DailyProgress/master/image/Airdroid/icon.png
