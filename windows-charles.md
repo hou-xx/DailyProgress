@@ -1,6 +1,8 @@
 ![charles-logo][8]
 # 为什么使用 charles-windows
-在实际开发、测试中需要通过代理截取 app 的网络请求报文来快速定位问题。https 双向认证的 app 越来越多，fiddler在这方面并不好用。由于开发、测试的同学使用 windows 系统较多，所以编写此文档作为 Windows 版 charles 使用指南。
+在实际开发、测试中需要通过代理截取 app 的网络请求报文来快速定位问题;       
+https 双向认证的 app 越来越多，fiddler在这方面并不好用;       
+由于开发、测试的同学使用 windows 系统较多，所以编写此文档作为 Windows 版 charles 使用指南。
 
 # 所需材料
 - Windows 系统电脑
@@ -13,7 +15,7 @@
 官网下载地址：
 ` https://www.charlesproxy.com/download/ `
 
-本文使用为4.1.4版本（最新版），下载地址： 
+本文使用为4.1.4版本，下载地址： 
 
 > https://www.charlesproxy.com/assets/release/4.1.4/charles-proxy-4.1.4-win64.msi
 
@@ -58,7 +60,7 @@ Help -> ssl proxy -> Install Charles Root Certificate on a Moblie Device or Remo
 
 ps:  
 
-1. 手机连上代理是时，Charlescharles 会弹窗提醒是否允许，同意即可；
+1. 手机连上代理是时，Charlescharles 会弹窗提醒是否允许，同意即可；  
 2. https 双向认证的抓包需要有该域名的证书文件（.p12文件）；     
 3. 第一个抓取的请求会要求输入证书密码，输入密码保存即可，输入密码后如果解析不了请求内容重启 charles 即可；    
 4. charles 为收费软件，免费版会有限制（比如：开启时等待 10s 、使用半个小时后提示重启）。    
