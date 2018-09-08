@@ -33,3 +33,138 @@ public @interface Override {
 既然，本身不具备任何业务处理能力，那 @Override 又是如何起效的呢？      
 对于 @Override 来说，是编译器在检查所有背其标注的方法，检查父类或者实现的接口里是否有该方法的声明。若不存在，则编译器报错，提醒错误。
 
+- @Deprecated
+@Deprecated 是长成这样子的：
+```
+package java.lang;
+
+import java.lang.annotation.*;
+import static java.lang.annotation.ElementType.*;
+
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value={CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, PARAMETER, TYPE})
+public @interface Deprecated {
+}
+```
+没错！这还是一个空注解。        
+程序员使用这个注解是提醒调用者，被其标注的方法是不安全的或者有更好替代方案的，是被废弃的。调用方若使用了被 @Deprecated 标注的方法，在编译时会收到一个警告。
+
+## 如何创建一个自定义注解
+还是直接端上两个自定义注解再解释吧     
+只有一个属性的自定义注解
+```
+package com.hxx.annotation;
+
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface Author {
+    String value();
+}
+```
+多个属性的自定义注解
+```
+package com.hxx.annotation;
+
+import com.hxx.enums.UserType;
+
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface AnnotationDemo {
+    long time() default 0;
+
+    int count() default 0;
+
+    String name() default "XiaoMing";
+
+    UserType userType() default UserType.SYSTEM_ADMIN;
+
+}
+```
+其中，`UserType` 是一个枚举
+```
+package com.hxx.enums;
+
+public enum UserType {
+    SYSTEM_ADMIN("系统管理员"),
+    TOURISTS("游客");
+    private String description;
+
+    UserType(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+}
+```
+
+
+### 元注解（专门注解其他注解的注解）
+J2SE5.0版本在 java.lang.annotation 提供了四种元注解：
+|注解名|注解含义|
+|:---:|:---:|
+|@Documented|注解是否将包含在 JavaDoc 中|
+|@Retention|注解的生命周期|
+|@Target|注解能被用在什么地方|
+|@Inherited|是否子类允许继承该注解|
+
+#### @Documented
+被 @Documented 标注的注解，注解信息会被添加在 JavaDoc 中
+
+#### @Retention
+@Retention 定义了其标记注解的生命周期。       
+可选的值有：
+- RetentionPolicy.SOURCE        
+在编译阶段丢弃，只作用于编译阶段，不会写入字节码。比如：@Override, @SuppressWarnings。
+- RetentionPolicy.CLASS         
+在类加载的时候丢弃，字节码文件的处理中有用。**注解默认使用这种方式**
+- RetentionPolicy.RUNTIME
+始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解的信息。**自定义注解时常用**
+
+#### @Target
+@Target 表示该注解用于什么地方。如果不明确指出，该注解可以放在任何地方。    
+可选的值有：
+|值|描述场景|
+|:--:|:--:|
+|ElementType.TYPE|类、接口或枚举声明|
+|ElementType.FIELD|属性（变量）声明|
+|ElementType.METHOD|方法声明|
+|ElementType.PARAMETER|形参声明|
+|ElementType.CONSTRUCTOR|构造函数声明|
+|ElementType.LOCAL_VARIABLE|局部变量声明|
+|ElementType.ANNOTATION_TYPE|用于标注注解（如元注解）|
+|ElementType.PACKAGE|包声明|
+
+java 8.0 又新增两个可选值：ElementType.TYPE_PARAMETER、ElementType.TYPE_USE。
+可以同时指定多个取值，互相不影响（因为@Target 的属性是个ElementType数组）。
+
+#### @Inherited
+@Inherited 定义该注释和子类的关系，仅对类起效。
+
+### 注解的属性
+注解（Annotations）只支持基本类型、String及枚举类型作为其属性，且所有的属性被定义成方法，并允许提供默认值（default关键字）。      
+
+### 注解的使用
+上面定义的 @AnnotationDemo 和 @Author 的用法示例如下：
+```
+package com.hxx.model;
+
+import com.hxx.annotation.*;
+import com.hxx.enums.UserType;
+
+@Author("houxx")
+public class Person {
+    @AnnotationDemo(time = 1, count = 2, name = "admin", userType = UserType.SYSTEM_ADMIN)
+    public void work() {
+        System.out.println("Now,to work!");
+    }
+
+```
+注解名后跟小括号标注其属性。标注方式：`属性名 = 值`，多个属性以 `,` 分隔。有默认值的属性可不赋值。     
+若是注解只有一个属性,可以直接命名为`value`，使用时无需再标明属性名。如：@Author和元注解。
