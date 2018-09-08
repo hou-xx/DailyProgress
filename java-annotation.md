@@ -4,9 +4,9 @@ Java 5.0 版本之后引入注解，至此就被广泛使用。
 ## 何为注解
 什么是注解呢？简单说，注解就是描述数据的数据（Data that describes other data），即 **元数据**；     
 就像注释一样，注解也能对源代码进行描述；除描述外注解还能实现对数据的分类；        
-在元数据方面，XML 被大量使用（过去和现在，估计未来也是如此）。
-XML 和注解的共同点：都只是描述性内容，**本身不具备任何业务处理能力**。
-XML 和注解的不同点：XML 和代码是松耦合的；注解和代码在物理距离上更近（紧耦合）。
+在元数据方面，XML 被大量使用（过去和现在，估计未来也是如此）。       
+XML 和注解的共同点：都只是描述性内容，**本身不具备任何业务处理能力**。     
+XML 和注解的不同点：XML 和代码是松耦合的；注解和代码在物理距离上更近（紧耦合）。        
 很多情况下，XML 配置其实就是为了分离代码和配置而使用的。但有些场景，我们更希望与代码紧密结合。
 
 ## 最常见的两个 java 注解
@@ -33,7 +33,7 @@ public @interface Override {
 既然，本身不具备任何业务处理能力，那 @Override 又是如何起效的呢？      
 对于 @Override 来说，是编译器在检查所有背其标注的方法，检查父类或者实现的接口里是否有该方法的声明。若不存在，则编译器报错，提醒错误。
 
-- @Deprecated
+- @Deprecated   
 @Deprecated 是长成这样子的：
 ```
 package java.lang;
@@ -106,7 +106,8 @@ public enum UserType {
 
 
 ### 元注解（专门注解其他注解的注解）
-J2SE5.0版本在 java.lang.annotation 提供了四种元注解：
+J2SE5.0版本在 java.lang.annotation 提供了四种元注解：   
+
 |注解名|注解含义|
 |:---:|:---:|
 |@Documented|注解是否将包含在 JavaDoc 中|
@@ -119,17 +120,18 @@ J2SE5.0版本在 java.lang.annotation 提供了四种元注解：
 
 #### @Retention
 @Retention 定义了其标记注解的生命周期。       
-可选的值有：
+可选的值有：      
 - RetentionPolicy.SOURCE        
-在编译阶段丢弃，只作用于编译阶段，不会写入字节码。比如：@Override, @SuppressWarnings。
+在编译阶段丢弃，只作用于编译阶段，不会写入字节码。比如：@Override, @SuppressWarnings。       
 - RetentionPolicy.CLASS         
-在类加载的时候丢弃，字节码文件的处理中有用。**注解默认使用这种方式**
-- RetentionPolicy.RUNTIME
-始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解的信息。**自定义注解时常用**
+在类加载的时候丢弃，字节码文件的处理中有用。**注解默认使用这种方式**        
+- RetentionPolicy.RUNTIME       
+始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解的信息。**自定义注解时常用**        
 
 #### @Target
-@Target 表示该注解用于什么地方。如果不明确指出，该注解可以放在任何地方。    
-可选的值有：
+@Target 表示该注解用于什么地方。如果不明确指出，该注解可以放在任何地方。      
+可选的值有：  
+
 |值|描述场景|
 |:--:|:--:|
 |ElementType.TYPE|类、接口或枚举声明|
@@ -141,7 +143,7 @@ J2SE5.0版本在 java.lang.annotation 提供了四种元注解：
 |ElementType.ANNOTATION_TYPE|用于标注注解（如元注解）|
 |ElementType.PACKAGE|包声明|
 
-java 8.0 又新增两个可选值：ElementType.TYPE_PARAMETER、ElementType.TYPE_USE。
+java 8.0 又新增两个可选值：ElementType.TYPE_PARAMETER、ElementType.TYPE_USE。      
 可以同时指定多个取值，互相不影响（因为@Target 的属性是个ElementType数组）。
 
 #### @Inherited
@@ -170,7 +172,7 @@ public class Person {
 若是注解只有一个属性,可以直接命名为`value`，使用时无需再标明属性名。如：@Author和元注解。
 
 ## 适合注解的场景
-上文明确说明了，**注解不具备任何业务处理能力**，这样的元数据似乎并不重要。     
+上文明确说明了，**注解不具备任何业务处理能力**，这样的元数据似乎并不非常重要。     
 但事实并非如此，各种开发框架里都大量的使用了注解（如 Spring、Hibernate）。       
-注解的声明和注解的处理逻辑是分不开的。后者常常以 **AOP**（面向切面编程） 的形式实现。
+注解的声明和注解的处理逻辑是分不开的。后者常常以 **AOP**（面向切面编程） 的形式实现。     
 AOP 中 annotation 的用法在下篇文章里。
