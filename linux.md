@@ -17,3 +17,17 @@ pstree -p PID | wc -l //查看指定 PID 进程的线程数
 ```
 
 
+### 安装 python
+> 安装 Anaconda 即可，Anaconda 自带大量常见 python 库，避免使用时去繁琐安装
+#### 下载 Anaconda 
+Anaconda 发布列表
+```
+https://repo.continuum.io/archive/
+```
+根据系统架构选择相应的安装文件
+#### windows 版安装
+双击下载的 exe 文件，按照提示安装即可（可修改安装文件夹）。最后一步提示安装 vscode 可不安装。
+#### linux 版安装
+`bash sh文件名`，按照提示安装即可（可修改安装文件夹）。最后一步提示安装 vscode 可不安装。   
+安装过程中可加入系统环境变量，即可替换系统自带 python 版本；  
+安装后需新开窗口方生效。    
