@@ -9,8 +9,8 @@ AOP 是指可以通过预编译方式和运行期动态代理实现在不修改�
 ## 常见的 AOP 使用场景
 目前常见的应用场景主要是日志记录，性能统计，安全控制，事务处理，异常处理等等。尤其在编程框架中最为常见。
 ## spring XML 配置方式 AOP
-`Talk is cheap, just show you the code`
-纯 spring XML 配置方式使用 AOP ，不使用 AspectJ 注解（这是挖的另一个坑，下一篇填）。
+`Talk is cheap, just show you the code`     
+本文使用纯 spring XML 配置方式使用 AOP ，不使用 AspectJ 注解（注解方式是挖的另一个坑，下一篇填）。
 ### 用作切面的注解
 借用 `java 注解（annotation）` 的自定义注解 AnnotationDemo （仅仅只是偷懒罢了）。     
 注解在上文中已经解释地很详细了。
@@ -182,15 +182,16 @@ spring context 入口文件（applicationContext.xml）：
 </beans>
 ```
 先来读一下这个配置文件     
-`<aop:config></aop:config>` 是一条 aop 规则，当然实际使用中可以根据需求定义多条规则。 `proxy-target-class` 指定是否创建基于类的（CGLIB）代理，默认创建 jdk 代理（Java interface-based）。一般选 true 即可（这二者代理的性能差别以后再填）。     
-`aop:aspect` 标签定义切面，ref 指定切面的实例；id 设置切面的标识； order 可以指定切面的顺序，用于同一个切入点（连接点）多个切面时指定执行顺序。    
-`aop:pointcut` 标签定义一个切入点，即切面执行的条件。id 设置标识指定切点对应要执行的方法时会使用。expression 指切点表达式，符合条件则触发切入点。`@annotation(com.hxx.annotation.AnnotationDemo)`的意思是被 AnnotationDemo 注解标注的地方是切入点（expression 的详细解释、种类及复合用法也先挖个坑）。     
-`aop:around` 标签定义切点围绕的方法，这里可以根据条件拒绝执行切点方法，也可以处理过程中产生的异常（吞掉或者包装）。pointcut-ref 指定属于哪个切入点，method 指定要执行切面方法名，本例中是 SpringAspect 的 doAround 方法。此时 doAround 方法只能有一个 JoinPoint 类型的参数，否则运行过程中会因参数不匹配而报错。         
+*`<aop:config></aop:config>`* 是一条 aop 规则，当然实际使用中可以根据需求定义多条规则。       
+`proxy-target-class` 指定是否创建基于类的（CGLIB）代理，默认创建 jdk 代理（Java interface-based）。一般选 true 即可（这二者代理的性能差别也先挖个坑，以后再填）。     
+*`aop:aspect`* 标签定义切面，ref 指定切面的实例；id 设置切面的标识； order 可以指定切面的顺序，用于同一个切入点（连接点）多个切面时指定执行顺序。    
+*`aop:pointcut`* 标签定义一个切入点，即切面执行的条件。id 设置标识，指定切入点对应要执行的方法时会使用。expression 指切点表达式，符合条件则触发切入点。`@annotation(com.hxx.annotation.AnnotationDemo)`的意思是被 AnnotationDemo 注解标注的地方是切入点（expression 的详细解释、种类及复合用法也先挖个坑）。     
+*`aop:around`* 标签定义切点围绕的方法，这里可以根据条件拒绝执行切点方法，也可以处理过程中产生的异常（吞掉或者包装）。pointcut-ref 指定属于哪个切入点，method 指定要执行切面方法名，本例中是 SpringAspect 的 doAround 方法。此时 doAround 方法只能有一个 JoinPoint 类型的参数，否则运行过程中会因参数不匹配而报错。         
 在 around 指定的方法里，调用 JoinPoint 的 proceed 方法就会执行切入点。around 也因围绕着这个过程而得名。       
-`aop:before` 标签定义切入点执行前要执行的方法。method 指定要执行切面的方法名,即  JoinPoint 的 proceed 方法执行前执行的方法（如果同时也有 around 配置的话）。     
-`aop:after` 标签定义切入点执行后要执行的方法。
-`aop:after-throwing` 标签定义发生异常时执行的方法，此时可以拿到发生的异常，但无法阻止异常抛出。throwing 指定 在 method 指定的方法里异常的参数名。出现 throwing 配置也要在方法里有同名的 Throwable 类型参数接收发生的异常，否则同样在运行过程中会因参数不匹配而报错。
-`aop:after-returning` 标签定义返回结果后执行的方法，与 `aop:after-throwing` 类似，returning 指代切面方法中接收返回值的形参。配置和方法必须同时出现。       
+*`aop:before`* 标签定义切入点执行前要执行的方法。method 指定要执行切面的方法名,即  JoinPoint 的 proceed 方法执行前执行的方法（如果同时也有 around 配置的话）。     
+*`aop:after`* 标签定义切入点执行后要执行的方法。     
+*`aop:after-throwing`* 标签定义发生异常时执行的方法，此时可以拿到发生的异常，但无法阻止异常抛出。throwing 指定 在 method 指定的方法里异常的参数名。出现 throwing 配置也要在方法里有同名的 Throwable 类型参数接收发生的异常，否则同样在运行过程中会因参数不匹配而报错。      
+*`aop:after-returning`* 标签定义返回结果后执行的方法，与 `aop:after-throwing` 类似，returning 指代切面方法中接收返回值的形参。配置和方法必须同时出现。       
 看完这些就可以看出 **around** 最为强大，ProceedingJoinPoint 参数可以控制切入点的执行，因此其使用场景也最多。      
 从 JoinPoint 中可以拿到切入点的方法以及其注解信息，还原出切点处的注解配置。       
 
