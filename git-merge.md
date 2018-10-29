@@ -22,7 +22,29 @@ fork 的原项目地址，有 pull 的权限；
 <br/>
 ![更新前，google 仓库的状态][2]
 
-### 操作步骤
+### 简单版
+1. 本地 clone 自己的远程仓库
+```
+git clone git@github.com:tianqing2117/flexbox-layout.git
+```
+clone 后需要 cd 到 flexbox-layout 文件夹里才进入 git 项目目录。             
+2. 添加原项目地址为远程仓库地址
+```
+git remote add google git@github.com:google/flexbox-layout.git
+```
+这里给这个远程仓库地址起名叫 google       
+3. 从步骤 2 添加的远程仓库 merge 代码
+```
+git merge google/master
+```
+添加后可以通过 `git remote -v` 查看一下    
+4. 提交变更到自己的远程仓库
+```
+git push origin master
+```
+
+### 复杂版
+#### 操作步骤
 1. 本地 clone 自己的远程仓库
 ```
 git clone git@github.com:tianqing2117/flexbox-layout.git
