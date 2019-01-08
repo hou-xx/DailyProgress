@@ -46,5 +46,57 @@ new DecimalFormat("0.00").format(new BigDecimal("0.3456")) --> 0.35
   
 [数字金额转大写汉字][1]
 
+- springBoot RestTemplate
+> 正常配置 RestTemplate
+
+```
+    @Bean
+    RestTemplate restTemplate() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(1000);
+        requestFactory.setReadTimeout(1000);
+        return new RestTemplate(requestFactory);
+    }
+```
+
+> 配置 RestTemplate 忽略证书错误
+
+```
+     @Bean
+    RestTemplate restTemplate() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;
+        SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom()
+                .loadTrustMaterial(null, acceptingTrustStrategy)
+                .build();
+
+        SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext);
+
+        CloseableHttpClient httpClient = HttpClients.custom()
+                .setSSLSocketFactory(csf)
+                .build();
+        HttpComponentsClientHttpRequestFactory requestFactory =
+                new HttpComponentsClientHttpRequestFactory();
+        requestFactory.setHttpClient(httpClient);
+        RestTemplate restTemplate = new RestTemplate(requestFactory);
+        return restTemplate;
+    }
+```
+
+> 使用时
+
+```
+    @Autowired
+    private RestTemplate restTemplate;
+
+    // post
+    restTemplate.postForObject(url, order, Object.class);
+    //get
+    restTemplate.getForObject(url, EsignDownLoadResult.class);
+```
+
+
+
+
+
 [1]:https://github.com/tianqing2117/DailyProgress/blob/master/utils/MoneyUtils.java
 
