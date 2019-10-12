@@ -94,7 +94,8 @@ new DecimalFormat("0.00").format(new BigDecimal("0.3456")) --> 0.35
     restTemplate.getForObject(url, EsignDownLoadResult.class);
 ```
 
-
+- spring restful
+ 使用 spring (或 springboot ) 注解开放 rest 接口时， post 请求需要使用 `@ResponseBody` 注解标注方法。否则接口到达后端正常处理后， 浏览器收到 404 ，无法收到返回。
 
 
 
