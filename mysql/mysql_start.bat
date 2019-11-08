@@ -1,1 +1,1 @@
-mysqld --defaults-file="E:\Software\mysql-5.7.20-winx64\my.ini" --console 
+mysqld --defaults-file="E:\mysql\mysql-8.0.14-winx64\my.ini" --console 

@@ -4,7 +4,7 @@ package com.hxx;
  * <ul>
  * <li>功能说明： 数字金额转大写汉字</li>
  * <li>作者：tal on 2018/7/26 0026 10:58 </li>
- * <li>邮箱：houxiangxiang@cibfintech.com</li>
+ * <li>邮箱：hou_xiangxiang@126.com</li>
  * </ul>
  */
 
